@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>QR Love</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: #fff0f5;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      font-family: sans-serif;
+    }
+
+    .heart {
+      position: relative;
+      width: 100px;
+      height: 90px;
+      background: red;
+      transform: rotate(-45deg);
+      animation: beat 1s infinite;
+      margin-bottom: 20px;
+    }
+
+    .heart::before,
+    .heart::after {
+      content: "";
+      position: absolute;
+      width: 100px;
+      height: 90px;
+      background: red;
+      border-radius: 50%;
+    }
+
+    .heart::before {
+      top: -50px;
+      left: 0;
+    }
+
+    .heart::after {
+      left: 50px;
+      top: 0;
+    }
+
+    @keyframes beat {
+      0%, 100% {
+        transform: scale(1) rotate(-45deg);
+      }
+      50% {
+        transform: scale(1.2) rotate(-45deg);
+      }
+    }
+
+    .qr {
+      margin-top: 20px;
+    }
+
+    .text {
+      margin-top: 20px;
+      font-size: 24px;
+      color: #d00050;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="heart"></div>
+  <div class="text">I Love You 💖</div>
+
+  <div class="qr">
+    <img src="heart_qr.png" alt="QR Code" width="200">
+  </div>
+
+</body>
+</html>
